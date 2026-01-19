@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia UVPrisma | Posicionamiento y Web</title>
+    <style>
+        /* --- VARIABLES Y COLORES (Basados en el Logo) --- */
+        :root {
+            --primary-blue: #6ca8cf; /* Azul medio del logo */
+            --dark-blue: #4a7a99;    /* Tono más oscuro del texto */
+            --light-blue: #e0f2f8;   /* Fondo muy claro */
+            --white: #ffffff;
+            --gray-text: #444444;
+            --accent-gradient: linear-gradient(135deg, #8dcce8 0%, #5a8cae 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--gray-text);
+            line-height: 1.6;
+            background-color: #f9fcfe;
+        }
+
+        /* --- UI COMPONENTS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--accent-gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(90, 140, 174, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 140, 174, 0.4);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark-blue);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* --- HEADER & HERO --- */
+        header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        .hero {
+            /* Banner estilo "Prisma" */
+            background: rgb(235,247,252);
+            background: linear-gradient(180deg, rgba(235,247,252,1) 0%, rgba(255,255,255,1) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decoración poligonal de fondo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-blue);
+            opacity: 0.1;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* --- ABOUT US --- */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about-box {
+            background: var(--light-blue);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        /* --- SERVICES --- */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .benefit {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.95rem;
+            color: var(--dark-blue);
+            font-weight: 500;
+        }
+
+        .benefit span {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        /* --- FAQ --- */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 25px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--dark-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Espacio extra solicitado entre pregunta y respuesta */
+        .faq-answer {
+            margin-top: 20px; 
+            color: #555;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
+        }
+
+        .pricing-highlight {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .pricing-list li {
+            list-style: none;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .pricing-list li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- CTA & FOOTER --- */
+        .cta-banner {
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .service-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                UV<span>Prisma</span>
+            </div>
+            <a href="#contacto" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Contactar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Haz que te encuentren,<br>no solo que te vean.</h1>
+            <p>Diseño web técnico y posicionamiento local para negocios que quieren crecer de verdad.</p>
+            <a href="#servicios" class="btn">Ver Servicios</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">¿Quiénes Somos?</h2>
+            <div class="about-box">
+                <p>En <strong>Agencia UVPrisma</strong>, nuestra misión es activar el potencial digital de los negocios locales. No solo creamos sitios web; generamos un flujo estratégico de tráfico que alerta a los algoritmos de Google, posicionando tu local como una referencia activa y relevante en tu zona. Nos especializamos en desarrollar herramientas de contacto directo y agendas optimizadas, diseñadas para convertir visitas en clientes reales, ganándole la carrera a tu competencia antes de que siquiera te noten.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>1. Diseño Landing Page Alta Velocidad</h3>
+                    <p>Sitios optimizados específicamente para celulares, sin plantillas pesadas.</p>
+                    <div class="benefit">
+                        <span>Beneficio:</span>
+                        Evitas que el cliente se desespere y se salga antes de ver quién eres.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>2. Posicionamiento en Google Maps</h3>
+                    <p>Configuración SEO Local para aparecer en los primeros 3 resultados de "cerca de mí".</p>
+                    <div class="benefit">
+                        <span>Beneficio:</span>
+                        Tráfico gratuito de personas listas para comprar.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>3. Enlace Directo a WhatsApp</h3>
+                    <p>Botones estratégicos para chatear con un solo clic, sin formularios largos.</p>
+                    <div class="benefit">
+                        <span>Beneficio:</span>
+                        Recibes prospectos directamente en tu celular.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>4. Mantenimiento Semanal</h3>
+                    <p>Subimos fotos y actualizamos horarios para mantener tu negocio "activo" ante Google.</p>
+                    <div class="benefit">
+                        <span>Beneficio:</span>
+                        Tú te enfocas en tu negocio, nosotros en tu imagen digital.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>5. Dominio y Seguridad SSL</h3>
+                    <p>Gestión completa de tu nombre .com y el "candadito verde" de seguridad.</p>
+                    <div class="benefit">
+                        <span>Beneficio:</span>
+                        Profesionalismo y confianza inmediata para tus clientes.
+                    </div>
+                </div>
+                <section id="preguntas">
+    <div class="container">
+        <div class="about-box">
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;">¿Donde lleno toda mi informacion?</h3>
+            <p>
+                Para comenzar a potenciar tu negocio y activar el flujo cibernético, necesitamos recolectar los datos esenciales de tu local. 
+                Este registro es el primer paso para configurar las herramientas de agenda que te pondrán por delante de la competencia.
+            </p>
+            <div style="margin-top: 25px; text-align: center;">
+                <a href="https://forms.gle/VBRVf8xSSVZdNyXCA" 
+                   target="_blank" 
+                   class="cta-button" 
+                   style="text-decoration: none; display: inline-block;">
+                    Ir al formulario de registro
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. ¿Por qué necesito una página web si ya tengo Facebook?</div>
+                <div class="faq-answer">
+                    Las redes sociales sirven para que te vean tus conocidos. Una página web técnica sirve para que te encuentre gente nueva en Google. Cuando alguien busca "Dentista cerca de mí", Google muestra páginas web y fichas de Maps, no perfiles de Facebook.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">2. ¿El nombre de la página (dominio) es mío?</div>
+                <div class="faq-answer">
+                    Sí, el dominio se registra a tu nombre. Nosotros solo nos encargamos de la gestión técnica para que no tengas que preocuparte por renovaciones o configuraciones complicadas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">3. ¿Qué incluye el pago de $200 pesos al mes?</div>
+                <div class="faq-answer">
+                    <p>Incluye tres pilares fundamentales para tu éxito digital:</p>
+                    <div class="pricing-highlight">
+                        <ul class="pricing-list">
+                            <li><strong>Hospedaje:</strong> Tu página en línea 24/7 en servidores rápidos.</li>
+                            <li><strong>Seguridad:</strong> Certificado SSL (candadito verde).</li>
+                            <li><strong>Posicionamiento:</strong> Actualizamos tu Google Maps cada semana para mantenerte arriba.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">4. ¿Cuánto tiempo tardan en entregar mi página?</div>
+                <div class="faq-answer">
+                    Una vez que llenas el formulario con tu información y fotos, entregamos el primer avance en un plazo de 48 a 72 horas hábiles.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">5. ¿Qué pasa si después quiero cambiar un precio?</div>
+                <div class="faq-answer">
+                    Solo nos mandas un WhatsApp y nosotros hacemos el ajuste en el código de inmediato. Eso ya viene incluido en tu mantenimiento mensual.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">6. ¿Por qué es tan barato comparado con otros?</div>
+                <div class="faq-answer">
+                    Porque no usamos plantillas pesadas ni sistemas lentos. Programamos de forma eficiente y usamos tecnología moderna (nube) que nos permite reducir costos y darte un precio justo para un negocio local.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">7. ¿Qué pasa si dejo de pagar la mensualidad?</div>
+                <div class="faq-answer">
+                    El servicio de hospedaje y mantenimiento se pausa y la página deja de estar visible. En cuanto te regularices, la reactivamos de inmediato sin cargos extra por reconexión.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="cta-banner">
+        <div class="container">
+            <h2>¿Listo para digitalizar tu negocio?</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Atención y soporte 24/7</p>
+            <a href="mailto:UVPrisma@gmail.com" class="btn" style="background: white; color: var(--primary-blue);">Mandar Correo a UVPrisma</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>UVPrisma Agencia</h3>
+            <p>Contacto: <a href="mailto:UVPrisma@gmail.com">UVPrisma@gmail.com</a></p>
+            <p>&copy; 2026 Agencia UVPrisma. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
