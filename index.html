@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agencia UVPrisma - Desarrollo Web de Alto Rendimiento. Landing Pages, SEO Local y Automatización para negocios que exigen resultados.">
+    <meta name="author" content="Agencia UVPrisma">
+    <meta name="keywords" content="Diseño Web, Landing Page, SEO, Google Maps, Negocios Locales, Marketing Digital">
+    <meta name="theme-color" content="#6ca8cf">
+    
+    <title>Agencia UVPrisma | Ingeniería Web & Posicionamiento Estratégico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ====================================================================
+        01. VARIABLES GLOBALES (ROOT)
+        Sistema de diseño centralizado para mantenimiento escalar.
+        ====================================================================
+        */
+        :root {
+            /* COLORES PRINCIPALES */
+            --color-primary: #6ca8cf;
+            --color-primary-dark: #4a8bb3;
+            --color-primary-light: #9ad0f0;
+            
+            /* COLORES SECUNDARIOS */
+            --color-secondary: #2c3e50;
+            --color-secondary-dark: #1a252f;
+            
+            /* COLORES DE ACENTO */
+            --color-accent: #e74c3c;
+            --color-success: #27ae60;
+            --color-warning: #f39c12;
+
+            /* ESCALA DE GRISES Y FONDOS */
+            --bg-body: #f8fbfe;
+            --bg-white: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-dark: #1e293b;
+            
+            /* TIPOGRAFÍA */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --text-white: #ffffff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* SOMBRAS (NEUMORFISMO & MATERIAL) */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 20px rgba(108, 168, 207, 0.5);
+            --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+            /* ESPACIADO Y BORDES */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* TRANSICIONES FÍSICAS */
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* ====================================================================
+        02. RESET CSS & NORMALIZACIÓN
+        Asegurando consistencia en todos los navegadores.
+        ====================================================================
+        */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-secondary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p { margin-bottom: 1.5rem; }
+        
+        a { text-decoration: none; color: inherit; transition: var(--transition-base); }
+        ul { list-style: none; }
+        img, svg { max-width: 100%; display: block; }
+        button { border: none; outline: none; background: none; cursor: pointer; }
+
+        /* ====================================================================
+        03. UTILIDADES & CLASES HELPER
+        Clases de utilidad para maquetación rápida.
+        ====================================================================
+        */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center { text-align: center; }
+        .text-gradient {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-padding { padding: 8rem 0; }
+        .bg-white { background-color: var(--bg-white); }
+        .bg-light { background-color: var(--bg-body); }
+
+        /* ====================================================================
+        04. COMPONENTES: BOTONES
+        Estilos complejos para interacciones táctiles y de mouse.
+        ====================================================================
+        */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--text-white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover::before { width: 100%; }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary-dark);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: var(--text-white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+            transform: scale(1.05);
+        }
+
+        .btn-email {
+            background-color: var(--bg-white);
+            color: var(--color-secondary);
+            border: 2px solid #eee;
+        }
+
+        .btn-email:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ====================================================================
+        05. ANIMACIONES (KEYFRAMES)
+        Biblioteca de movimientos para la web.
+        ====================================================================
+        */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(108, 168, 207, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(108, 168, 207, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(108, 168, 207, 0); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Clases para Javascript Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ====================================================================
+        06. PRELOADER
+        Pantalla de carga inicial.
+        ====================================================================
+        */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-white);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            width: 0%;
+            height: 100%;
+            background: var(--color-primary);
+            animation: progress 1.5s ease-in-out forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* ====================================================================
+        07. HEADER & NAVEGACIÓN
+        Barra de navegación con efecto cristal.
+        ====================================================================
+        */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: var(--transition-base);
+        }
+
+        header.scrolled {
+            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span { color: var(--color-primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-secondary);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0; width: 0%; height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-secondary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ====================================================================
+        08. HERO SECTION
+        Sección principal con alto impacto visual.
+        ====================================================================
+        */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+        }
+
+        .hero-shape {
+            position: absolute;
+            top: -10%; right: -10%;
+            width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(108,168,207,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        /* SVG Animado del Hero */
+        .svg-hero {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(108, 168, 207, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* ====================================================================
+        09. SECCIÓN SOBRE NOSOTROS (STATS)
+        ====================================================================
+        */
+        .stats-section {
+            background: var(--bg-white);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* ====================================================================
+        10. SERVICIOS (GLASSMORPHISM & GRID)
+        ====================================================================
+        */
+        .services {
+            background-color: #f8fbfe;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .subtitle {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(108, 168, 207, 0.1);
+            color: var(--color-primary);
+            font-weight: 700;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-bounce);
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(108, 168, 207, 0.3);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e0f2f8 0%, #ffffff 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .icon-box svg {
+            width: 35px;
+            height: 35px;
+        }
+
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        
+        .service-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .service-card.active .service-content {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .benefit-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: var(--color-success);
+            font-size: 0.9rem;
+            background: rgba(39, 174, 96, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        /* ====================================================================
+        11. PROCESO (TIMELINE)
+        ====================================================================
+        */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(108, 168, 207, 0.15);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content h4 { margin-top: 2rem; }
+
+        /* ====================================================================
+        12. PRECIOS (CARDS AVANZADAS)
+        ====================================================================
+        */
+        .pricing-section {
+            background: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 0;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-header {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #f8fbfe;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card.premium {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .pricing-card.premium:hover {
+            transform: scale(1.08);
+        }
+
+        .pricing-card.premium .pricing-header {
+            background: linear-gradient(135deg, rgba(108,168,207,0.1) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .price-wrapper { margin: 1.5rem 0; }
+        
+        .currency { font-size: 1.5rem; vertical-align: top; font-weight: 600; }
+        .amount { font-size: 3.5rem; font-weight: 800; color: var(--color-secondary); }
+        .period { color: var(--text-light); font-weight: 500; display: block; margin-top: 5px; }
+        
+        .monthly-fee {
+            background: var(--color-secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .pricing-features {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .pricing-features ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .check-icon {
+            color: var(--color-primary);
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+        }
+
+        .pricing-footer {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* ====================================================================
+        13. FAQ SECTION (ACORDEÓN)
+        ====================================================================
+        */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1rem;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--color-secondary);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .faq-trigger:hover { color: var(--color-primary); }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+            fill: var(--text-light);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+        
+        .faq-item.active .faq-trigger { color: var(--color-primary); }
+        .faq-item.active .faq-icon { transform: rotate(180deg); fill: var(--color-primary); }
+        .faq-item.active .faq-content { max-height: 300px; padding-bottom: 1.5rem; }
+
+        /* ====================================================================
+        14. CALL TO ACTION (CTA)
+        ====================================================================
+        */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, #1a252f 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content { position: relative; z-index: 2; }
+        
+        .cta-section h2 { color: white; margin-bottom: 1.5rem; font-size: 2.5rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 3rem; }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* ====================================================================
+        15. FOOTER
+        ====================================================================
+        */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 5rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+        .footer-brand p { max-width: 300px; }
+
+        .footer-links h4 { color: white; margin-bottom: 1.5rem; }
+        .footer-links ul li { margin-bottom: 0.8rem; }
+        .footer-links a:hover { color: var(--color-primary); padding-left: 5px; }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ====================================================================
+        16. RESPONSIVE DESIGN (MEDIA QUERIES)
+        Adaptación a todos los dispositivos móviles.
+        ====================================================================
+        */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .pricing-card.premium { transform: scale(1); }
+            .pricing-card.premium:hover { transform: translateY(-5px); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Aquí iría lógica para menú hamburguesa real */
+            .menu-toggle { display: flex; }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-btns { justify-content: center; }
+            
+            .stats-grid { grid-template-columns: 1fr; }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .footer-brand p { margin: 0 auto; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .btn { width: 100%; padding: 1rem; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-logo">UV<span>Prisma</span></div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <header id="navbar">
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                Agencia UV<span>Prisma</span>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="#faq">Preguntas</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="#contacto" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Cotizar</a>
+                <div class="menu-toggle" onclick="toggleMobileMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-shape"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal-left">
+                <span class="subtitle">🚀 Desarrollo Web & SEO Local</span>
+                <h1>Haz que te encuentren,<br>no solo que te vean.</h1>
+                <p>Diseño web técnico, integración de APIs y posicionamiento estratégico en Google Maps para negocios que quieren dominar su mercado local.</p>
+                <div class="hero-btns">
+                    <a href="#servicios" class="btn btn-outline">Ver Soluciones</a>
+                    <a href="#precios" class="btn btn-primary">Ver Planes</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual reveal">
+                <svg class="svg-hero" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="50" y="50" width="400" height="250" rx="15" fill="white" stroke="#6ca8cf" stroke-width="2" />
+                    <rect x="50" y="50" width="400" height="40" rx="15" fill="#f0f7ff" />
+                    <circle cx="80" cy="70" r="5" fill="#ff5f56" />
+                    <circle cx="100" cy="70" r="5" fill="#ffbd2e" />
+                    <circle cx="120" cy="70" r="5" fill="#27c93f" />
+                    <rect x="90" y="130" width="140" height="20" rx="5" fill="#e0e0e0" />
+                    <rect x="90" y="160" width="100" height="10" rx="5" fill="#f0f0f0" />
+                    <rect x="90" y="180" width="120" height="10" rx="5" fill="#f0f0f0" />
+                    
+                    <g transform="translate(300, 180)">
+                        <circle r="60" fill="#6ca8cf" opacity="0.1" />
+                        <path d="M0 -30 L20 10 L0 5 L-20 10 Z" fill="#6ca8cf" transform="rotate(45)" />
+                    </g>
+                    
+                    <rect x="280" y="250" width="120" height="8" rx="4" fill="#8dcce8" />
+                    <rect x="280" y="270" width="80" height="8" rx="4" fill="#8dcce8" opacity="0.6" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="stats-section reveal">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 data-target="48">0</h3>
+                    <p>Horas de Entrega</p>
+                </div>
+                <div class="stat-item">
+                    <h3 data-target="100">0%</h3>
+                    <p>Optimización Móvil</p>
+                </div>
+                <div class="stat-item">
+                    <h3 data-target="3500">0</h3>
+                    <p>Pesos MXN (Plan Pro)</p>
+                </div>
+                <div class="stat-item">
+                    <h3 data-target="24">0/7</h3>
+                    <p>Soporte Técnico</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="servicios" class="section-padding services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Nuestras Capacidades</span>
+                <h2>Ingeniería aplicada a ventas</h2>
+                <p>No hacemos "sitios bonitos". Construimos herramientas de venta que funcionan mientras duermes. Haz clic en cada tarjeta para ver los detalles técnicos.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal" onclick="toggleService(this)">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Landing Page High-Performance</h3>
+                    <p>Sitios de aterrizaje ultrarrápidos, diseñados sin plantillas pesadas.</p>
+                    <div class="service-content">
+                        <ul>
+                            <li>✓ Código HTML5/CSS3 limpio y semántico.</li>
+                            <li>✓ Carga en menos de 2 segundos.</li>
+                            <li>✓ Adaptabilidad total (Responsive) a cualquier celular.</li>
+                            <li>✓ Estructura orientada a la conversión (Ventas).</li>
+                        </ul>
+                        <span class="benefit-tag">Resultado: Menos rebote, más clientes.</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" onclick="toggleService(this)">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    </div>
+                    <h3>Dominio de Google Maps</h3>
+                    <p>Estrategia de SEO Local para aparecer cuando busquen "cerca de mí".</p>
+                    <div class="service-content">
+                        <ul>
+                            <li>✓ Optimización de ficha Google Business Profile.</li>
+                            <li>✓ Gestión de reseñas y reputación.</li>
+                            <li>✓ Geolocalización estratégica.</li>
+                            <li>✓ Actualización semanal de fotos y horarios.</li>
+                        </ul>
+                        <span class="benefit-tag">Resultado: Tráfico físico gratuito.</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" onclick="toggleService(this)">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h3>Automatización de Contacto</h3>
+                    <p>Eliminamos la fricción entre el cliente y tú.</p>
+                    <div class="service-content">
+                        <ul>
+                            <li>✓ API de WhatsApp integrada (Clic para chatear).</li>
+                            <li>✓ Enlaces de correo inteligentes con asunto prellenado.</li>
+                            <li>✓ Formularios de captación de leads.</li>
+                            <li>✓ Botones de llamada directa.</li>
+                        </ul>
+                        <span class="benefit-tag">Resultado: Velocidad de respuesta inmediata.</span>
+                    </div>
+                </div>
+
+                <div class="service-card reveal" onclick="toggleService(this)">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3>Infraestructura & Seguridad</h3>
+                    <p>Hosting, SSL y mantenimiento para que nunca te caigas.</p>
+                    <div class="service-content">
+                        <ul>
+                            <li>✓ Certificado SSL (Candado verde de seguridad).</li>
+                            <li>✓ Hosting en servidores de alta disponibilidad.</li>
+                            <li>✓ Mantenimiento técnico mensual incluido.</li>
+                            <li>✓ Ajustes de contenido ilimitados.</li>
+                        </ul>
+                        <span class="benefit-tag">Resultado: Paz mental total.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="process-steps reveal">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <div class="step-content">
+                        <h4>Registro</h4>
+                        <p>Llenas nuestro formulario inteligente con la info de tu negocio y fotos.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <div class="step-content">
+                        <h4>Desarrollo</h4>
+                        <p>En 48-72h programamos tu sitio desde cero (sin plantillas baratas).</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <div class="step-content">
+                        <h4>Revisión</h4>
+                        <p>Te mostramos el avance, ajustamos detalles y perfeccionamos.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <div class="step-content">
+                        <h4>Lanzamiento</h4>
+                        <p>Publicamos, indexamos en Google y activamos tus campañas.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="precios" class="section-padding bg-white">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Inversión Transparente</span>
+                <h2>Planes diseñados para crecer</h2>
+                <p>Sin letras chiquitas. Elige el nivel de profesionalismo con el que quieres que el mundo vea tu negocio.</p>
+            </div>
+
+            <div class="pricing-grid">
+                
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3>Opción Sin Dominio</h3>
+                        <div class="price-wrapper">
+                            <span class="currency">$</span>
+                            <span class="amount">2,500</span>
+                            <span class="currency">MXN</span>
+                            <span class="period">Pago Inicial Único</span>
+                        </div>
+                        <span class="monthly-fee">Mensualidad: $200 MXN</span>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Diseño Landing Page Profesional
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Hosting (Hospedaje Web)
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Integración WhatsApp & Correo
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Creación de Gmail Personalizado
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Soporte Básico
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contacto" class="btn btn-outline" style="width: 100%;">Seleccionar</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card premium reveal">
+                    <div class="pricing-header">
+                        <div style="background: var(--color-primary); color: white; padding: 5px; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; margin-bottom: 10px; border-radius: 4px; display: inline-block;">Recomendado</div>
+                        <h3>Opción Con Dominio</h3>
+                        <div class="price-wrapper">
+                            <span class="currency">$</span>
+                            <span class="amount">3,500</span>
+                            <span class="currency">MXN</span>
+                            <span class="period">Pago Inicial Único</span>
+                        </div>
+                        <span class="monthly-fee">Mensualidad: $350 MXN</span>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <strong>Todo lo del plan anterior</strong>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <strong>Dominio .COM propio</strong>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Certificado SSL Avanzado
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Prioridad en Soporte Técnico
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Gestión Avanzada de Google Maps
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contacto" class="btn btn-primary" style="width: 100%;">Quiero ser Profesional</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 4rem; background: #f1f5f9; padding: 2rem; border-radius: var(--radius-md); text-align: center;" class="reveal">
+                <h4 style="margin-bottom: 1rem;">📌 Condiciones Generales & Tiempos</h4>
+                <p style="font-size: 0.95rem; max-width: 800px; margin: 0 auto;">
+                    El tiempo de entrega es de <strong>5 a 7 días hábiles</strong> una vez recibida la información y el pago inicial. 
+                    El sitio permanece activo mientras la mensualidad (vía Mercado Pago) esté al corriente.
+                    Cualquier cambio estructural mayor puede generar costos adicionales previo aviso.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Dudas Comunes</span>
+                <h2>Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="faq-container reveal">
+                <div class="faq-item">
+                    <div class="faq-trigger" onclick="toggleFAQ(this)">
+                        ¿Por qué necesito una web si ya tengo Facebook?
+                        <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <div class="faq-content">
+                        <p>Facebook es para socializar, Google es para buscar soluciones. Cuando alguien necesita tus servicios urgentemente, busca en Google, no en Facebook. Una web profesional te da credibilidad y te posiciona en los resultados de búsqueda donde están los clientes listos para comprar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger" onclick="toggleFAQ(this)">
+                        ¿Qué pasa si dejo de pagar la mensualidad?
+                        <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <div class="faq-content">
+                        <p>El servicio de hospedaje y mantenimiento se pausa y la página deja de estar visible. No te preocupes, no borramos nada inmediatamente. En cuanto te regularices, reactivamos todo sin cargos extra por reconexión.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger" onclick="toggleFAQ(this)">
+                        ¿Puedo cambiar precios o fotos después?
+                        <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <div class="faq-content">
+                        <p>¡Claro! Los cambios de contenido (textos, precios, fotos) son ilimitados y gratuitos. Solo nos mandas un WhatsApp y nuestro equipo técnico hace el ajuste en el código.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger" onclick="toggleFAQ(this)">
+                        ¿El dominio es mío?
+                        <svg class="faq-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <div class="faq-content">
+                        <p>Sí, en el plan de $3,500 el dominio se registra a tu nombre o el de tu negocio. Nosotros nos encargamos de la gestión técnica (DNS, renovaciones) para que no te compliques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-padding cta-section">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px; opacity: 0.05;"></div>
+        
+        <div class="container cta-content reveal">
+            <h2>¿Listo para digitalizar tu negocio?</h2>
+            <p>Deja de perder clientes frente a tu competencia. Activa tu presencia digital hoy mismo con expertos que entienden tu negocio.</p>
+            
+            <div class="cta-buttons">
+                <a href="mailto:UVPrisma@gmail.com?subject=Consulta%20sobre%20servicios%20de%20landing%20pages&body=Hola%2C%0AEstoy%20interesado%20en%20crear%20una%20landing%20page%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios.%0A%0APor%20favor%2C%20cont%C3%A1ctenme%20por%20este%20mismo%20correo%20o%20al%20siguiente%20n%C3%BAmero%20de%20tel%C3%A9fono%3A%0A%F0%9F%93%B1%20__________________________%0A%0AQuedo%20atento%2Fa.%0AGracias." 
+                   class="btn btn-email">
+                   ✉️ Enviar Correo Oficial
+                </a>
+
+                <a href="https://wa.me/525209887581?text=Hola%20Agencia%20UVPrisma%2C%20estoy%20viendo%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20Landing%20Pages." 
+                   target="_blank"
+                   class="btn btn-whatsapp">
+                   📱 WhatsApp: (520) 988 7581
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">Soporte técnico y ventas disponible 24/7</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Agencia UVPrisma</h3>
+                    <p>Transformamos negocios locales en referentes digitales mediante código limpio, velocidad y estrategia de posicionamiento.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#precios">Precios y Planes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; <span id="year">2026</span> Agencia UVPrisma. Todos los derechos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">Developed by UVPrisma Core Team.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Inicialización del Core de UVPrisma
+         * Se ejecuta cuando el DOM está completamente cargado.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. GESTIÓN DEL PRELOADER
+            // Simula una carga de recursos y desvanece el loader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1500); // 1.5 segundos de "tiempo de marca"
+
+            // 2. ACTUALIZACIÓN DINÁMICA DEL AÑO
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // 3. ANIMACIÓN DE CONTADORES (STATS)
+            // Solo se ejecuta cuando la sección es visible
+            const counters = document.querySelectorAll('.stat-item h3');
+            let hasCounted = false;
+
+            const runCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // ms
+                    const increment = target / (duration / 16); // 60fps
+
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.ceil(current) + (counter.getAttribute('data-target').includes('.') ? '%' : '');
+                            // Re-append suffix logic specifically for format
+                            if(target === 100) counter.textContent += "%";
+                            if(target === 24) counter.textContent = Math.ceil(current) + "/7";
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                            if(target === 100) counter.textContent += "%";
+                            if(target === 24) counter.textContent += "/7";
+                        }
+                    };
+                    updateCounter();
+                });
+            };
+
+            // 4. INTERSECTION OBSERVER (Scroll Reveal)
+            // API nativa del navegador para detectar visibilidad de elementos
+            const observerOptions = {
+                threshold: 0.15, // Se activa cuando el 15% del elemento es visible
+                rootMargin: "0px"
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    
+                    // Añadir clase active
+                    entry.target.classList.add('active');
+                    
+                    // Lógica especial para contadores
+                    if (entry.target.classList.contains('stats-section') && !hasCounted) {
+                        runCounters();
+                        hasCounted = true;
+                    }
+
+                    // Dejar de observar una vez animado (rendimiento)
+                    observer.unobserve(entry.target);
+                });
+            }, observerOptions);
+
+            // Observar todos los elementos con clase .reveal y .reveal-left
+            document.querySelectorAll('.reveal, .reveal-left, .stats-section').forEach(el => {
+                observer.observe(el);
+            });
+
+            // 5. NAVBAR SCROLL EFFECT
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        /**
+         * Función para expandir tarjetas de servicios
+         * Implementa patrón de acordeón exclusivo (cierra otros al abrir uno)
+         * @param {HTMLElement} element - La tarjeta clickeada
+         */
+        function toggleService(element) {
+            const allServices = document.querySelectorAll('.service-card');
+            
+            // Si ya está activo, lo cerramos
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+                return;
+            }
+
+            // Cerramos todos los demás
+            allServices.forEach(card => card.classList.remove('active'));
+
+            // Abrimos el actual
+            element.classList.add('active');
+        }
+
+        /**
+         * Función para el acordeón de FAQ
+         * @param {HTMLElement} element - El disparador de la pregunta
+         */
+        function toggleFAQ(element) {
+            const parent = element.parentElement;
+            
+            // Toggle simple
+            parent.classList.toggle('active');
+            
+            // Opcional: Cerrar otros FAQs (si se desea comportamiento exclusivo)
+            /*
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(item => {
+                if (item !== parent) item.classList.remove('active');
+            });
+            */
+        }
+
+        /**
+         * Menú Hamburguesa Móvil
+         */
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            // Lógica simple para demo, idealmente añadiría clases CSS
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            }
+        }
+    </script>
+</body>
+</html>
