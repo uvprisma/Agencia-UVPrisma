@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agencia UVPrisma - Desarrollo Web de Alto Rendimiento. Landing Pages, SEO Local y Automatización.">
+    <meta name="description" content="Agencia UVPrisma - Diseño Web Económico y Profesional. Digitaliza tu negocio sin gastar una fortuna.">
     <meta name="author" content="Agencia UVPrisma">
-    <title>Agencia UVPrisma | Ingeniería Web & Estrategia</title>
+    <title>Agencia UVPrisma | Tu Web Profesional y Accesible</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* === PALETA BEIGE & AZUL === */
-            /* Azul Profundo (Confianza, Tecnología) */
-            --color-primary: #1B3B6F; 
-            --color-primary-dark: #122B54;
-            --color-primary-light: #608BC1;
+            /* === PALETA BEIGE & AZUL NAVY (Seriedad y Confianza) === */
+            --color-primary: #1B3B6F; /* Azul Navy */
+            --color-primary-dark: #0F2344;
+            --color-primary-light: #5276A8;
 
-            /* Beige / Crema (Elegancia, Fondo) */
-            --bg-body: #F7F5F0;  /* Beige suave */
+            /* Beige / Crema */
+            --bg-body: #F7F5F0; 
             --bg-white: #FFFFFF;
-            --bg-accent: #EBE5D9; /* Beige más oscuro para detalles */
+            --bg-accent: #E8E4D9;
 
             /* Texto */
             --text-main: #2C3E50;
@@ -33,20 +32,16 @@
             /* Tipografía */
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --font-serif: 'Playfair Display', serif; /* Para toques elegantes */
 
-            /* Sombras Suaves */
+            /* Utilidades */
             --shadow-sm: 0 4px 6px -1px rgba(27, 59, 111, 0.08);
             --shadow-lg: 0 20px 25px -5px rgba(27, 59, 111, 0.15);
-            --shadow-glow: 0 0 20px rgba(96, 139, 193, 0.4);
-
-            /* Bordes */
             --radius-md: 0.75rem;
             --radius-full: 9999px;
             --transition-base: all 0.3s ease;
         }
 
-        /* RESET & BASE */
+        /* RESET BÁSICO */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
@@ -69,7 +64,7 @@
         ul { list-style: none; }
         img, svg { max-width: 100%; display: block; }
 
-        /* UTILIDADES */
+        /* LAYOUT */
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
         .section-padding { padding: 6rem 0; }
         .text-center { text-align: center; }
@@ -103,13 +98,13 @@
             color: var(--text-white);
         }
 
-        .btn-whatsapp { background-color: #25D366; color: white; }
-        .btn-whatsapp:hover { background-color: #1ebc57; transform: scale(1.05); }
+        .btn-whatsapp { background-color: #25D366; color: white; border: none; }
+        .btn-whatsapp:hover { background-color: #1ebc57; transform: scale(1.05); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); }
 
         .btn-email { background-color: var(--bg-white); color: var(--color-primary); border: 2px solid #eee; }
-        .btn-email:hover { border-color: var(--color-primary); }
+        .btn-email:hover { border-color: var(--color-primary); color: var(--color-primary-dark); transform: translateY(-3px); }
 
-        /* NAVBAR */
+        /* HEADER */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             padding: 1.2rem 0; transition: var(--transition-base);
@@ -138,16 +133,15 @@
         .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
         .bar { width: 25px; height: 3px; background-color: var(--color-primary); border-radius: 2px; }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
             padding-top: 120px; min-height: 100vh; display: flex; align-items: center;
             background: linear-gradient(180deg, var(--bg-body) 0%, #FFFFFF 100%);
             position: relative; overflow: hidden;
         }
-        /* Decoración de fondo abstracta */
         .hero::before {
             content: ''; position: absolute; top: -10%; right: -5%;
-            width: 50vw; height: 50vw; background: rgba(96, 139, 193, 0.1);
+            width: 50vw; height: 50vw; background: rgba(82, 118, 168, 0.08);
             border-radius: 50%; filter: blur(80px); z-index: 0;
         }
 
@@ -156,10 +150,10 @@
             position: relative; z-index: 1;
         }
 
-        .hero-content h1 { font-size: 3.8rem; margin-bottom: 1.5rem; color: var(--color-primary-dark); }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--color-primary-dark); }
         .hero-content p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 550px; }
         .subtitle {
-            display: inline-block; padding: 0.4rem 1rem; background: rgba(96, 139, 193, 0.15);
+            display: inline-block; padding: 0.4rem 1rem; background: rgba(27, 59, 111, 0.08);
             color: var(--color-primary); font-weight: 700; border-radius: 50px;
             font-size: 0.85rem; margin-bottom: 1.5rem;
         }
@@ -168,16 +162,6 @@
         .svg-hero { width: 100%; filter: drop-shadow(0 20px 40px rgba(27, 59, 111, 0.15)); animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-        /* STATS */
-        .stats-section { margin-top: -3rem; position: relative; z-index: 10; padding-bottom: 4rem; }
-        .stats-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-            background: var(--bg-white); padding: 3rem; border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg); text-align: center; border: 1px solid rgba(0,0,0,0.05);
-        }
-        .stat-item h3 { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem; }
-        .stat-item p { font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
-
         /* SERVICIOS */
         .service-card {
             background: var(--bg-white); padding: 3rem; border-radius: var(--radius-md);
@@ -185,7 +169,7 @@
             border: 1px solid transparent; cursor: pointer;
         }
         .service-card:hover {
-            transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: rgba(96, 139, 193, 0.3);
+            transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: rgba(27, 59, 111, 0.1);
         }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .icon-box {
@@ -207,15 +191,15 @@
             position: relative; z-index: 2;
         }
         .pricing-header {
-            padding: 3rem 2rem; text-align: center; background: #FDFDFB; border-bottom: 1px solid #eee;
+            padding: 3rem 2rem; text-align: center; background: #FCFCFA; border-bottom: 1px solid #eee;
         }
         .amount { font-size: 3.5rem; font-weight: 800; color: var(--color-primary-dark); }
         .pricing-features { padding: 2rem; }
         .pricing-features ul li { margin-bottom: 1rem; display: flex; gap: 10px; color: var(--text-main); font-size: 0.95rem; }
-        .check-icon { color: #D4AF37; width: 20px; flex-shrink: 0; } /* Dorado para checks */
+        .check-icon { color: #C5A059; width: 20px; flex-shrink: 0; } 
 
         /* FAQ & CTA */
-        .faq-item { border-bottom: 1px solid #ddd; margin-bottom: 1rem; }
+        .faq-item { border-bottom: 1px solid #e5e5e5; margin-bottom: 1rem; }
         .faq-trigger { padding: 1.5rem 0; font-weight: 700; color: var(--color-primary); cursor: pointer; display: flex; justify-content: space-between; }
         .faq-content { max-height: 0; overflow: hidden; transition: 0.4s ease; color: var(--text-light); }
         .faq-item.active .faq-content { max-height: 300px; padding-bottom: 1.5rem; }
@@ -225,37 +209,30 @@
             padding: 6rem 1rem; position: relative;
         }
         .cta-section h2 { color: white; margin-bottom: 1rem; }
-        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; }
+        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 3rem; }
 
         /* FOOTER */
-        footer { background-color: #111827; color: #9ca3af; padding: 5rem 0 2rem; font-size: 0.9rem; }
+        footer { background-color: #0F172A; color: #94A3B8; padding: 5rem 0 2rem; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
         .footer-brand h3 { color: white; margin-bottom: 1rem; }
         .footer-links h4 { color: white; margin-bottom: 1.5rem; }
         .footer-links a:hover { color: var(--color-primary-light); padding-left: 5px; }
         .copyright { border-top: 1px solid rgba(255,255,255,0.1); text-align: center; padding-top: 2rem; }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } 
-            .menu-toggle { display: flex; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .pricing-card.premium { transform: scale(1); }
-        }
-        
         /* ANIMACIONES */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } 
+            .menu-toggle { display: flex; }
+            .pricing-card.premium { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
-
-    <div id="preloader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg-white); z-index:9999; display:flex; justify-content:center; align-items:center; transition:0.5s;">
-        <div style="width:50px; height:50px; border:4px solid var(--bg-body); border-top-color:var(--color-primary); border-radius:50%; animation:spin 1s linear infinite;"></div>
-    </div>
-    <style> @keyframes spin { to { transform: rotate(360deg); } } </style>
 
     <header id="navbar">
         <div class="container nav-wrapper">
@@ -271,7 +248,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#precios">Precios</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#faq">Dudas</a></li>
                 </ul>
             </nav>
 
@@ -287,25 +264,26 @@
     <section id="inicio" class="hero">
         <div class="container hero-container">
             <div class="hero-content reveal">
-                <span class="subtitle">Desarrollo Web & SEO Local</span>
-                <h1>Haz que te encuentren, <br>no solo que te vean.</h1>
-                <p>Ingeniería web, integración de APIs y posicionamiento estratégico en Google Maps para negocios que exigen resultados reales.</p>
+                <span class="subtitle">🚀 Digitalización Accesible</span>
+                <h1>Tu Página Web Profesional al <br>Mejor Precio.</h1>
+                <p>Digitaliza tu negocio con un sitio web moderno, rápido y económico. La mejor relación calidad-precio para negocios locales que quieren verse profesionales.</p>
                 <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content: start;">
-                    <a href="#servicios" class="btn btn-outline">Ver Soluciones</a>
-                    <a href="#precios" class="btn btn-primary">Ver Planes</a>
+                    <a href="#precios" class="btn btn-primary">Ver Paquetes</a>
+                    <a href="#servicios" class="btn btn-outline">¿Qué incluye?</a>
                 </div>
             </div>
             
             <div class="hero-visual reveal">
                 <svg class="svg-hero" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
                     <rect x="50" y="60" width="400" height="260" rx="12" fill="white" stroke="#1B3B6F" stroke-width="3"/>
-                    <rect x="50" y="60" width="400" height="40" rx="12" fill="#F7F5F0" /> <circle cx="80" cy="80" r="5" fill="#FF5F56" />
+                    <rect x="50" y="60" width="400" height="40" rx="12" fill="#F7F5F0" />
+                    <circle cx="80" cy="80" r="5" fill="#FF5F56" />
                     <circle cx="100" cy="80" r="5" fill="#FFBD2E" />
                     <circle cx="120" cy="80" r="5" fill="#27C93F" />
-                    <rect x="90" y="140" width="160" height="15" rx="4" fill="#EBE5D9" />
-                    <rect x="90" y="170" width="100" height="8" rx="4" fill="#EBE5D9" />
-                    <rect x="90" y="190" width="120" height="8" rx="4" fill="#EBE5D9" />
-                    <circle cx="360" cy="180" r="50" fill="rgba(96,139,193,0.1)" />
+                    <rect x="90" y="140" width="160" height="15" rx="4" fill="#E8E4D9" />
+                    <rect x="90" y="170" width="100" height="8" rx="4" fill="#E8E4D9" />
+                    <rect x="90" y="190" width="120" height="8" rx="4" fill="#E8E4D9" />
+                    <circle cx="360" cy="180" r="50" fill="rgba(27,59,111,0.1)" />
                     <path d="M360 160 L370 180 L350 180 Z" fill="#1B3B6F" transform="translate(0,10)" />
                     <rect x="90" y="240" width="320" height="6" rx="3" fill="#eee" />
                     <rect x="90" y="240" width="200" height="6" rx="3" fill="#1B3B6F" />
@@ -315,12 +293,11 @@
     </section>
 
     <div class="container">
-        <section class="stats-section reveal">
-            <div class="stats-grid">
-                <div class="stat-item"><h3 data-target="48">0</h3><p>Horas Entrega</p></div>
-                <div class="stat-item"><h3 data-target="100">0%</h3><p>Optimización Móvil</p></div>
-                <div class="stat-item"><h3 data-target="3500">0</h3><p>Pesos MXN (Pro)</p></div>
-                <div class="stat-item"><h3 data-target="24">0/7</h3><p>Soporte Técnico</p></div>
+        <section class="stats-section reveal" style="margin-top: -3rem; position: relative; z-index: 10; padding-bottom: 4rem;">
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; background: var(--bg-white); padding: 3rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); text-align: center;">
+                <div class="stat-item"><h3 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Económico</h3><p style="font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase;">Precios Justos</p></div>
+                <div class="stat-item"><h3 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Rápido</h3><p style="font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase;">Entrega Express</p></div>
+                <div class="stat-item"><h3 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Calidad</h3><p style="font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase;">Diseño Profesional</p></div>
             </div>
         </section>
     </div>
@@ -328,45 +305,47 @@
     <section id="servicios" class="section-padding">
         <div class="container">
             <div class="text-center reveal" style="margin-bottom:4rem;">
-                <span class="subtitle">Nuestras Capacidades</span>
-                <h2>Ingeniería aplicada a ventas</h2>
-                <p style="max-width:600px; margin:1rem auto; color:var(--text-light);">Construimos herramientas que funcionan mientras duermes. Haz clic en las tarjetas para ver detalles.</p>
+                <span class="subtitle">Lo que hacemos</span>
+                <h2>Soluciones Prácticas y Accesibles</h2>
+                <p style="max-width:600px; margin:1rem auto; color:var(--text-light);">Todo lo que necesitas para estar en internet, sin complicaciones técnicas.</p>
             </div>
 
             <div class="services-grid">
                 <div class="service-card reveal" onclick="toggleService(this)">
                     <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-                    <h3>Landing Page Rápida</h3>
-                    <p>Sitios web ultrarrápidos, sin plantillas pesadas.</p>
+                    <h3>Landing Page Moderna</h3>
+                    <p>Tu carta de presentación digital. Diseño limpio que carga rápido en celulares.</p>
                     <div class="service-content">
                         <ul>
-                            <li>✓ HTML5/CSS3 limpio y semántico.</li>
-                            <li>✓ Carga en < 2 segundos.</li>
-                            <li>✓ Adaptabilidad total a móviles.</li>
+                            <li>✓ Diseño atractivo y profesional.</li>
+                            <li>✓ Se ve bien en cualquier celular.</li>
+                            <li>✓ Información clara de tus servicios.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="service-card reveal" onclick="toggleService(this)">
                     <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
-                    <h3>Google Maps SEO</h3>
-                    <p>Estrategia local para aparecer en "cerca de mí".</p>
+                    <h3>Ubicación en Mapas</h3>
+                    <p>Te ayudamos a que aparezcas en el mapa cuando la gente busque tu servicio.</p>
                     <div class="service-content">
                         <ul>
-                            <li>✓ Optimización Google Business.</li>
-                            <li>✓ Gestión de reputación.</li>
-                            <li>✓ Geolocalización estratégica.</li>
+                            <li>✓ Configuración de Google Maps.</li>
+                            <li>✓ Horarios y fotos actualizadas.</li>
+                            <li>✓ Más fácil de encontrar para tus clientes.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="service-card reveal" onclick="toggleService(this)">
                     <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-                    <h3>Automatización</h3>
-                    <p>Eliminamos fricción entre el cliente y tú.</p>
+                    <h3>Contacto Directo</h3>
+                    <p>Botones para que te manden WhatsApp o te llamen con un solo clic.</p>
                     <div class="service-content">
                         <ul>
-                            <li>✓ API de WhatsApp integrada.</li>
-                            <li>✓ Correos prellenados.</li>
-                            <li>✓ Botones de llamada directa.</li>
+                            <li>✓ Botón de WhatsApp flotante.</li>
+                            <li>✓ Enlace directo a llamada.</li>
+                            <li>✓ Facilitamos que te contacten.</li>
                         </ul>
                     </div>
                 </div>
@@ -377,38 +356,39 @@
     <section id="precios" class="section-padding" style="background:var(--bg-white);">
         <div class="container">
             <div class="text-center reveal" style="margin-bottom:4rem;">
-                <span class="subtitle">Inversión Clara</span>
-                <h2>Plan Recomendado</h2>
+                <span class="subtitle">Precios Transparentes</span>
+                <h2>Paquete Todo Incluido</h2>
+                <p>Sin letras chiquitas. Calidad premium a precio de emprendedor.</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card premium reveal">
                     <div class="pricing-header">
-                        <div style="background:var(--color-primary); color:white; padding:4px 12px; border-radius:4px; font-size:0.75rem; display:inline-block; margin-bottom:10px; font-weight:bold;">MÁS VENDIDO</div>
-                        <h3>Dominio Personalizado</h3>
+                        <div style="background:var(--color-primary); color:white; padding:4px 12px; border-radius:4px; font-size:0.75rem; display:inline-block; margin-bottom:10px; font-weight:bold;">RECOMENDADO</div>
+                        <h3>Profesional</h3>
                         <div style="margin:1.5rem 0;">
                             <span style="font-size:1.5rem; vertical-align:top;">$</span>
                             <span class="amount">3,500</span>
                             <span style="color:var(--text-light); font-weight:600;">MXN</span>
                             <span style="display:block; font-size:0.9rem; color:var(--text-light); margin-top:5px;">Pago Único Inicial</span>
                         </div>
-                        <span style="background:var(--text-main); color:white; padding:5px 15px; border-radius:20px; font-size:0.8rem;">Mensualidad: $300 MXN</span>
+                        <span style="background:var(--text-main); color:white; padding:5px 15px; border-radius:20px; font-size:0.8rem;">Mensualidad accesible: $300 MXN</span>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Dominio .com Personalizado</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hosting de Alta Velocidad</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Correo Corporativo Pro</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Soporte Técnico Mensual</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Integración WhatsApp/Email</li>
+                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Dominio .com (TuNombre.com)</li>
+                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hosting Rápido y Seguro</li>
+                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Correo con tu Nombre</li>
+                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Soporte Técnico Incluido</li>
+                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Botones de WhatsApp</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="reveal" style="margin-top:3rem; text-align:center; padding:2rem; background:var(--bg-body); border-radius:var(--radius-md);">
-                <h4>📌 Condiciones</h4>
-                <p style="font-size:0.9rem; margin-top:1rem;">Entrega en <strong>5 a 7 días hábiles</strong>. El servicio incluye mantenimiento continuo mientras la mensualidad esté activa.</p>
+                <h4>📌 Sin plazos forzosos</h4>
+                <p style="font-size:0.9rem; margin-top:1rem;">Tu página está activa mientras cubras la mensualidad. Puedes cancelar cuando quieras sin penalización.</p>
             </div>
         </div>
     </section>
@@ -422,24 +402,24 @@
             <div class="reveal">
                 <div class="faq-item">
                     <div class="faq-trigger" onclick="toggleFAQ(this)">
-                        ¿Por qué una web si tengo Facebook?
+                        ¿Por qué es tan económico?
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </div>
-                    <div class="faq-content"><p>Facebook es social, Google es intencional. Una web te da credibilidad y captura a clientes que buscan soluciones ya.</p></div>
+                    <div class="faq-content"><p>Optimizamos nuestros procesos y usamos tecnología eficiente para ofrecerte calidad profesional sin los costos inflados de las grandes agencias.</p></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-trigger" onclick="toggleFAQ(this)">
                         ¿El dominio es mío?
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </div>
-                    <div class="faq-content"><p>Sí, registramos el dominio a tu nombre. Nosotros solo gestionamos la parte técnica.</p></div>
+                    <div class="faq-content"><p>Sí, registramos el nombre de tu negocio (.com) a tu nombre. Nosotros solo nos encargamos de que funcione técnicamente.</p></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-trigger" onclick="toggleFAQ(this)">
                         ¿Qué pasa si dejo de pagar?
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </div>
-                    <div class="faq-content"><p>El sitio se pausa temporalmente sin perderse. Al reactivar el pago, todo vuelve a la normalidad.</p></div>
+                    <div class="faq-content"><p>El sitio se pausa temporalmente. No borramos tu información inmediatamente, así que puedes reactivarlo cuando gustes.</p></div>
                 </div>
             </div>
         </div>
@@ -447,11 +427,20 @@
 
     <section id="contacto" class="cta-section reveal">
         <div class="container">
-            <h2>¿Listo para digitalizar tu negocio?</h2>
-            <p>Deja de perder clientes frente a tu competencia.</p>
+            <h2>Dale formalidad a tu negocio hoy mismo</h2>
+            <p>Empieza con una inversión inteligente. Calidad profesional a tu alcance.</p>
             <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-                <a href="mailto:UVPrisma@gmail.com" class="btn btn-email">✉️ Enviar Correo</a>
-                <a href="https://wa.me/15209887581" target="_blank" class="btn btn-whatsapp">📱 WhatsApp</a>
+                
+                <a href="mailto:UVPrisma@gmail.com?subject=🔥%20PROYECTO:%20Quiero%20mi%20web%20profesional%20y%20accesible&body=Hola%20equipo%20UVPrisma,%0A%0AMe%20interesa%20digitalizar%20mi%20negocio%20con%20una%20inversión%20inteligente.%20Busco%20calidad%20y%20buen%20precio.%0A%0AMi%20negocio%20es:%20____________________%0A%0AQuedo%20pendiente%20de%20la%20info.%20¡Saludos!" 
+                   class="btn btn-email">
+                   ✉️ Enviar Correo
+                </a>
+
+                <a href="https://wa.me/5215209887581?text=Hola%20UVPrisma!%20👋%20Busco%20una%20opción%20buena,%20bonita%20y%20barata%20para%20mi%20negocio.%20Quiero%20verme%20profesional%20en%20internet%20sin%20gastar%20una%20fortuna.%20¿Qué%20paquetes%20manejan?%20🚀" 
+                   target="_blank" 
+                   class="btn btn-whatsapp">
+                   📱 WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -461,7 +450,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Agencia UVPrisma</h3>
-                    <p>Transformamos negocios locales en referentes digitales mediante código limpio y estrategia.</p>
+                    <p>Hacemos que los negocios locales se vean profesionales en internet con precios justos y tecnología eficiente.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navegación</h4>
@@ -488,12 +477,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Preloader
-            setTimeout(() => {
-                document.getElementById('preloader').style.opacity = '0';
-                setTimeout(() => document.getElementById('preloader').style.display = 'none', 500);
-            }, 1000);
-
             // Año actual
             document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -502,8 +485,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // Lógica para contadores
-                        if(entry.target.classList.contains('stats-section')) runCounters();
                     }
                 });
             }, { threshold: 0.1 });
@@ -516,27 +497,6 @@
                 window.scrollY > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
             });
         });
-
-        // Contadores
-        let counted = false;
-        function runCounters() {
-            if(counted) return;
-            counted = true;
-            document.querySelectorAll('.stat-item h3').forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const update = () => {
-                    count += target / 50;
-                    if(count < target) {
-                        counter.textContent = Math.ceil(count) + (target === 100 ? '%' : '') + (target === 24 ? '/7' : '');
-                        requestAnimationFrame(update);
-                    } else {
-                        counter.textContent = target + (target === 100 ? '%' : '') + (target === 24 ? '/7' : '');
-                    }
-                };
-                update();
-            });
-        }
 
         function toggleService(el) {
             document.querySelectorAll('.service-card').forEach(c => c !== el && c.classList.remove('active'));
