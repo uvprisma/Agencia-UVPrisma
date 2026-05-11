@@ -4,36 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agencia UVPrisma - Diseño Web Económico y Profesional. Digitaliza tu negocio sin gastar una fortuna.">
+    <meta name="description" content="Agencia UVPrisma - Diseño Web Económico y de Calidad. Digitaliza tu negocio sin gastar una fortuna.">
     <meta name="author" content="Agencia UVPrisma">
-    <title>Agencia UVPrisma | Tu Web Profesional y Accesible</title>
+    <title>Agencia UVPrisma | Tu Web de Calidad y Accesible</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* === PALETA BEIGE & AZUL NAVY (Seriedad y Confianza) === */
-            --color-primary: #1B3B6F; /* Azul Navy */
+            --color-primary: #1B3B6F;
             --color-primary-dark: #0F2344;
             --color-primary-light: #5276A8;
+            --color-gold: #C5A059;
 
-            /* Beige / Crema */
-            --bg-body: #F7F5F0; 
+            --bg-body: #F7F5F0;
             --bg-white: #FFFFFF;
             --bg-accent: #E8E4D9;
 
-            /* Texto */
             --text-main: #2C3E50;
             --text-light: #586878;
             --text-white: #FFFFFF;
 
-            /* Tipografía */
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
 
-            /* Utilidades */
             --shadow-sm: 0 4px 6px -1px rgba(27, 59, 111, 0.08);
             --shadow-lg: 0 20px 25px -5px rgba(27, 59, 111, 0.15);
             --radius-md: 0.75rem;
@@ -41,16 +37,15 @@
             --transition-base: all 0.3s ease;
         }
 
-        /* RESET BÁSICO */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        
+
         body {
             font-family: var(--font-body);
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.7;
-            overflow-x: hidden; /* Previene scroll horizontal global */
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -64,19 +59,18 @@
         ul { list-style: none; }
         img, svg { max-width: 100%; display: block; }
 
-        /* LAYOUT */
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
         .section-padding { padding: 6rem 0; }
         .text-center { text-align: center; }
-        
+
         /* BOTONES */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 1rem 2rem; font-weight: 700; border-radius: var(--radius-full);
+            padding: 1rem 2rem; font-weight: 600; border-radius: var(--radius-full);
             transition: var(--transition-base); cursor: pointer; text-transform: uppercase;
-            letter-spacing: 0.5px; font-size: 0.9rem;
+            letter-spacing: 0.5px; font-size: 0.85rem; font-family: var(--font-body);
+            border: none;
         }
-
         .btn-primary {
             background-color: var(--color-primary);
             color: var(--text-white);
@@ -87,7 +81,6 @@
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
-
         .btn-outline {
             background: transparent;
             color: var(--color-primary);
@@ -97,12 +90,27 @@
             background: var(--color-primary);
             color: var(--text-white);
         }
-
-        .btn-whatsapp { background-color: #25D366; color: white; border: none; }
-        .btn-whatsapp:hover { background-color: #1ebc57; transform: scale(1.05); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); }
-
-        .btn-email { background-color: var(--bg-white); color: var(--color-primary); border: 2px solid #eee; }
-        .btn-email:hover { border-color: var(--color-primary); color: var(--color-primary-dark); transform: translateY(-3px); }
+        /* ✅ FIX: Botón WhatsApp corregido */
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        }
+        .btn-email {
+            background-color: var(--bg-white);
+            color: var(--color-primary);
+            border: 2px solid #ddd;
+        }
+        .btn-email:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
 
         /* HEADER */
         header {
@@ -110,155 +118,229 @@
             padding: 1.2rem 0; transition: var(--transition-base);
         }
         header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
             box-shadow: var(--shadow-sm);
             padding: 0.8rem 0;
         }
-
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo { 
-            font-size: 1.6rem; font-weight: 900; color: var(--color-primary); 
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem; font-weight: 900; color: var(--color-primary);
             display: flex; align-items: center; gap: 0.5rem; letter-spacing: -1px;
         }
-        
         .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--color-primary); position: relative; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--color-primary); position: relative; }
         .nav-links a::after {
             content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 2px;
-            background: var(--color-primary-light); transition: width 0.3s;
+            background: var(--color-gold); transition: width 0.3s;
         }
         .nav-links a:hover::after { width: 100%; }
-
         .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .bar { width: 25px; height: 3px; background-color: var(--color-primary); border-radius: 2px; }
+        .bar { width: 25px; height: 3px; background-color: var(--color-primary); border-radius: 2px; transition: var(--transition-base); }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             padding-top: 120px; min-height: 100vh; display: flex; align-items: center;
-            background: linear-gradient(180deg, var(--bg-body) 0%, #FFFFFF 100%);
+            background: linear-gradient(165deg, #F7F5F0 0%, #FFFFFF 60%, #EEF2F8 100%);
             position: relative; overflow: hidden;
         }
         .hero::before {
             content: ''; position: absolute; top: -10%; right: -5%;
-            width: 50vw; height: 50vw; background: rgba(82, 118, 168, 0.08);
+            width: 50vw; height: 50vw; background: rgba(82, 118, 168, 0.07);
             border-radius: 50%; filter: blur(80px); z-index: 0;
         }
-
+        .hero::after {
+            content: ''; position: absolute; bottom: 10%; left: -10%;
+            width: 30vw; height: 30vw; background: rgba(197, 160, 89, 0.06);
+            border-radius: 50%; filter: blur(60px); z-index: 0;
+        }
         .hero-container {
             display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
             position: relative; z-index: 1;
         }
-
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--color-primary-dark); }
-        .hero-content p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 550px; }
-        .subtitle {
-            display: inline-block; padding: 0.4rem 1rem; background: rgba(27, 59, 111, 0.08);
-            color: var(--color-primary); font-weight: 700; border-radius: 50px;
-            font-size: 0.85rem; margin-bottom: 1.5rem;
+        .hero-content h1 {
+            font-size: 3.8rem; margin-bottom: 1.5rem; color: var(--color-primary-dark);
+            font-style: italic;
         }
+        .hero-content h1 em { font-style: normal; color: var(--color-gold); }
+        .hero-content p { font-size: 1.15rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 500px; }
+        .subtitle {
+            display: inline-block; padding: 0.4rem 1rem;
+            background: rgba(27, 59, 111, 0.08);
+            color: var(--color-primary); font-weight: 600; border-radius: 50px;
+            font-size: 0.85rem; margin-bottom: 1.5rem; letter-spacing: 0.3px;
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-        /* SVG Hero */
         .svg-hero { width: 100%; filter: drop-shadow(0 20px 40px rgba(27, 59, 111, 0.15)); animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-        /* === AQUÍ ESTÁ EL ARREGLO DE LA CAJA FLOTANTE === */
+        /* STATS */
         .stats-section {
-            margin-top: -3rem; 
-            position: relative; 
-            z-index: 10; 
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
             padding-bottom: 4rem;
         }
-        
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
             background: var(--bg-white);
-            padding: 3rem;
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-lg);
             text-align: center;
+            overflow: hidden;
         }
-
-        .stat-item h3 { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem; }
-        .stat-item p { font-size: 0.85rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; }
+        .stat-item {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #f0ede6;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-item h3 { font-size: 2rem; color: var(--color-primary); margin-bottom: 0.4rem; font-style: italic; }
+        .stat-item p { font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* SERVICIOS */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .service-card {
-            background: var(--bg-white); padding: 3rem; border-radius: var(--radius-md);
+            background: var(--bg-white); padding: 2.5rem; border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm); transition: var(--transition-base);
             border: 1px solid transparent; cursor: pointer;
         }
         .service-card:hover {
-            transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: rgba(27, 59, 111, 0.1);
+            transform: translateY(-8px); box-shadow: var(--shadow-lg);
+            border-color: rgba(27, 59, 111, 0.12);
         }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card.active {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+        }
         .icon-box {
-            width: 60px; height: 60px; background: var(--bg-body); border-radius: 15px;
-            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
-            color: var(--color-primary);
+            width: 56px; height: 56px; background: linear-gradient(135deg, var(--bg-body), #EEF2F8);
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem; color: var(--color-primary);
         }
-        .service-content { max-height: 0; overflow: hidden; transition: 0.5s ease; opacity: 0; }
-        .service-card.active .service-content { max-height: 400px; opacity: 1; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #eee; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .service-card > p { color: var(--text-light); font-size: 0.95rem; }
+        .service-content {
+            max-height: 0; overflow: hidden; transition: 0.5s ease; opacity: 0;
+        }
+        .service-card.active .service-content {
+            max-height: 400px; opacity: 1; margin-top: 1.5rem;
+            padding-top: 1rem; border-top: 1px solid #eee;
+        }
+        .service-content li {
+            color: var(--text-light); font-size: 0.9rem; padding: 0.3rem 0;
+            display: flex; gap: 8px; align-items: flex-start;
+        }
 
         /* PRECIOS */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 480px; margin: 0 auto; }
         .pricing-card {
             background: var(--bg-white); border-radius: var(--radius-md); overflow: hidden;
             box-shadow: var(--shadow-sm); border: 2px solid transparent; display: flex; flex-direction: column;
         }
         .pricing-card.premium {
-            border-color: var(--color-primary); transform: scale(1.05); box-shadow: var(--shadow-lg);
-            position: relative; z-index: 2;
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
         }
         .pricing-header {
-            padding: 3rem 2rem; text-align: center; background: #FCFCFA; border-bottom: 1px solid #eee;
+            padding: 3rem 2rem; text-align: center;
+            background: linear-gradient(160deg, #F7F5F0, #EEF2F8);
+            border-bottom: 1px solid #eee;
         }
-        .amount { font-size: 3.5rem; font-weight: 800; color: var(--color-primary-dark); }
-        .pricing-features { padding: 2rem; }
-        .pricing-features ul li { margin-bottom: 1rem; display: flex; gap: 10px; color: var(--text-main); font-size: 0.95rem; }
-        .check-icon { color: #C5A059; width: 20px; flex-shrink: 0; } 
+        .pricing-header .badge {
+            background: var(--color-primary); color: white;
+            padding: 4px 14px; border-radius: 4px; font-size: 0.72rem;
+            display: inline-block; margin-bottom: 12px; font-weight: 700;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .pricing-header h3 { font-size: 1.6rem; margin-bottom: 1.2rem; font-style: italic; }
+        .amount {
+            font-family: var(--font-heading);
+            font-size: 3.5rem; font-weight: 900; color: var(--color-primary-dark); line-height: 1;
+        }
+        .price-note { font-size: 0.85rem; color: var(--text-light); margin-top: 8px; }
+        .soporte-badge {
+            display: inline-block; background: var(--text-main); color: white;
+            padding: 6px 16px; border-radius: 20px; font-size: 0.78rem; margin-top: 1rem;
+        }
+        .pricing-features { padding: 2rem; flex: 1; }
+        .pricing-features ul li {
+            margin-bottom: 1rem; display: flex; gap: 10px;
+            color: var(--text-main); font-size: 0.92rem; align-items: flex-start;
+        }
+        .check-icon { color: var(--color-gold); width: 20px; flex-shrink: 0; }
 
-        /* FAQ & CTA */
-        .faq-item { border-bottom: 1px solid #e5e5e5; margin-bottom: 1rem; }
-        .faq-trigger { padding: 1.5rem 0; font-weight: 700; color: var(--color-primary); cursor: pointer; display: flex; justify-content: space-between; }
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid #e5e5e5; }
+        .faq-trigger {
+            padding: 1.5rem 0; font-weight: 600; font-size: 1rem;
+            color: var(--color-primary); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+            font-family: var(--font-body);
+        }
+        .faq-trigger svg { flex-shrink: 0; transition: transform 0.3s; }
+        .faq-item.active .faq-trigger svg { transform: rotate(180deg); }
         .faq-content { max-height: 0; overflow: hidden; transition: 0.4s ease; color: var(--text-light); }
         .faq-item.active .faq-content { max-height: 300px; padding-bottom: 1.5rem; }
 
+        /* CTA */
         .cta-section {
-            background: var(--color-primary-dark); color: white; text-align: center;
-            padding: 6rem 1rem; position: relative;
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            color: white; text-align: center; padding: 7rem 1rem; position: relative; overflow: hidden;
         }
-        .cta-section h2 { color: white; margin-bottom: 1rem; }
-        .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 3rem; }
+        .cta-section::before {
+            content: ''; position: absolute; top: -50%; left: -20%;
+            width: 60%; height: 200%; background: rgba(255,255,255,0.03);
+            border-radius: 50%; transform: rotate(-15deg);
+        }
+        .cta-section h2 { color: white; font-size: 2.8rem; margin-bottom: 1rem; font-style: italic; position: relative; }
+        .cta-section p { color: rgba(255,255,255,0.75); margin-bottom: 3rem; font-size: 1.1rem; position: relative; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; position: relative; }
 
         /* FOOTER */
-        footer { background-color: #0F172A; color: #94A3B8; padding: 5rem 0 2rem; font-size: 0.9rem; }
+        footer { background-color: #0A1628; color: #94A3B8; padding: 5rem 0 2rem; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-        .footer-brand h3 { color: white; margin-bottom: 1rem; }
-        .footer-links h4 { color: white; margin-bottom: 1.5rem; }
-        .footer-links a:hover { color: var(--color-primary-light); padding-left: 5px; }
-        .copyright { border-top: 1px solid rgba(255,255,255,0.1); text-align: center; padding-top: 2rem; }
+        .footer-brand h3 { color: white; margin-bottom: 1rem; font-style: italic; }
+        .footer-brand p { line-height: 1.8; }
+        .footer-links h4 { color: white; margin-bottom: 1.5rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-links ul li { margin-bottom: 0.8rem; }
+        .footer-links a:hover { color: var(--color-gold); padding-left: 5px; }
+        .copyright { border-top: 1px solid rgba(255,255,255,0.08); text-align: center; padding-top: 2rem; }
 
         /* ANIMACIONES */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        /* RESPONSIVE (MÓVIL) */
+
+        /* WHATSAPP FLOTANTE */
+        .whatsapp-float {
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+            width: 58px; height: 58px; background: #25D366;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            transition: var(--transition-base);
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.55);
+        }
+        .whatsapp-float svg { color: white; }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } 
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-content p { margin: 0 auto 2.5rem; }
+            .hero-cta { justify-content: center; }
+            .nav-links { display: none; }
             .menu-toggle { display: flex; }
-            .pricing-card.premium { transform: scale(1); }
-            
-            /* Corrección Específica para la caja que se sale */
-            .stats-grid { 
-                grid-template-columns: 1fr; /* Una sola columna en móvil */
-                padding: 2rem; /* Menos relleno para que quepa bien */
-                gap: 3rem; 
-            }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid #f0ede6; }
+            .stat-item:last-child { border-bottom: none; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .cta-section h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -267,14 +349,14 @@
     <header id="navbar">
         <div class="container nav-wrapper">
             <div class="logo">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
                 UVPrisma
             </div>
 
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#precios">Precios</a></li>
@@ -284,7 +366,7 @@
 
             <div style="display:flex; align-items:center; gap:15px;">
                 <a href="#contacto" class="btn btn-primary" style="padding:0.6rem 1.5rem; font-size:0.8rem;">Cotizar</a>
-                <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <div class="menu-toggle" id="menuToggle" onclick="toggleMobileMenu()">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
             </div>
@@ -295,28 +377,35 @@
         <div class="container hero-container">
             <div class="hero-content reveal">
                 <span class="subtitle">🚀 Digitalización Accesible</span>
-                <h1>Tu Página Web Profesional al <br>Mejor Precio.</h1>
-                <p>Digitaliza tu negocio con un sitio web moderno, rápido y económico. La mejor relación calidad-precio para negocios locales que quieren verse profesionales.</p>
-                <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content: start;">
+                <h1>Tu Página Web <br><em>de Calidad</em> al Mejor Precio.</h1>
+                <p>Digitaliza tu negocio con un sitio web moderno, rápido y económico. La mejor relación calidad-precio para negocios locales que quieren verse bien en internet.</p>
+                <div class="hero-cta">
                     <a href="#precios" class="btn btn-primary">Ver Paquete</a>
                     <a href="#servicios" class="btn btn-outline">¿Qué incluye?</a>
                 </div>
             </div>
-            
+
             <div class="hero-visual reveal">
                 <svg class="svg-hero" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="50" y="60" width="400" height="260" rx="12" fill="white" stroke="#1B3B6F" stroke-width="3"/>
-                    <rect x="50" y="60" width="400" height="40" rx="12" fill="#F7F5F0" />
-                    <circle cx="80" cy="80" r="5" fill="#FF5F56" />
-                    <circle cx="100" cy="80" r="5" fill="#FFBD2E" />
-                    <circle cx="120" cy="80" r="5" fill="#27C93F" />
-                    <rect x="90" y="140" width="160" height="15" rx="4" fill="#E8E4D9" />
-                    <rect x="90" y="170" width="100" height="8" rx="4" fill="#E8E4D9" />
-                    <rect x="90" y="190" width="120" height="8" rx="4" fill="#E8E4D9" />
-                    <circle cx="360" cy="180" r="50" fill="rgba(27,59,111,0.1)" />
-                    <path d="M360 160 L370 180 L350 180 Z" fill="#1B3B6F" transform="translate(0,10)" />
-                    <rect x="90" y="240" width="320" height="6" rx="3" fill="#eee" />
-                    <rect x="90" y="240" width="200" height="6" rx="3" fill="#1B3B6F" />
+                    <rect x="50" y="60" width="400" height="280" rx="14" fill="white" stroke="#1B3B6F" stroke-width="2.5"/>
+                    <rect x="50" y="60" width="400" height="42" rx="14" fill="#F7F5F0"/>
+                    <rect x="50" y="88" width="400" height="14" fill="#F7F5F0"/>
+                    <circle cx="78" cy="81" r="5" fill="#FF5F56"/>
+                    <circle cx="98" cy="81" r="5" fill="#FFBD2E"/>
+                    <circle cx="118" cy="81" r="5" fill="#27C93F"/>
+                    <rect x="160" y="73" width="180" height="16" rx="8" fill="#E8E4D9"/>
+                    <rect x="88" y="130" width="140" height="18" rx="5" fill="#1B3B6F" opacity="0.15"/>
+                    <rect x="88" y="158" width="90" height="10" rx="4" fill="#E8E4D9"/>
+                    <rect x="88" y="176" width="110" height="10" rx="4" fill="#E8E4D9"/>
+                    <rect x="88" y="194" width="80" height="10" rx="4" fill="#E8E4D9"/>
+                    <rect x="88" y="220" width="100" height="32" rx="8" fill="#1B3B6F"/>
+                    <circle cx="350" cy="185" r="65" fill="rgba(27,59,111,0.07)" stroke="#1B3B6F" stroke-width="1.5" stroke-dasharray="5 4"/>
+                    <circle cx="350" cy="185" r="45" fill="rgba(27,59,111,0.1)"/>
+                    <path d="M335 170 L365 185 L335 200 Z" fill="#1B3B6F"/>
+                    <rect x="88" y="290" width="324" height="6" rx="3" fill="#eee"/>
+                    <rect x="88" y="290" width="210" height="6" rx="3" fill="#1B3B6F" opacity="0.6"/>
+                    <rect x="88" y="304" width="324" height="6" rx="3" fill="#eee"/>
+                    <rect x="88" y="304" width="150" height="6" rx="3" fill="#C5A059" opacity="0.5"/>
                 </svg>
             </div>
         </div>
@@ -335,7 +424,7 @@
                 </div>
                 <div class="stat-item">
                     <h3>Calidad</h3>
-                    <p>Diseño Profesional</p>
+                    <p>Diseño Cuidado</p>
                 </div>
             </div>
         </section>
@@ -351,7 +440,11 @@
 
             <div class="services-grid">
                 <div class="service-card reveal" onclick="toggleService(this)">
-                    <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                    <div class="icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
                     <h3>Landing Page Moderna</h3>
                     <p>Tu carta de presentación digital. Diseño limpio que carga rápido en celulares.</p>
                     <div class="service-content">
@@ -364,9 +457,13 @@
                 </div>
 
                 <div class="service-card reveal" onclick="toggleService(this)">
-                    <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+                    <div class="icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z"/>
+                        </svg>
+                    </div>
                     <h3>Ubicación en Mapas</h3>
-                    <p>Te ayudamos a que aparezcas en el mapa cuando la gente busque tu servicio.</p>
+                    <p>Te ayudamos a aparecer en el mapa cuando la gente busque tu servicio.</p>
                     <div class="service-content">
                         <ul>
                             <li>✓ Configuración de Google Maps.</li>
@@ -377,7 +474,11 @@
                 </div>
 
                 <div class="service-card reveal" onclick="toggleService(this)">
-                    <div class="icon-box"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                    <div class="icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                    </div>
                     <h3>Contacto Directo</h3>
                     <p>Botones para que te manden WhatsApp o te llamen con un solo clic.</p>
                     <div class="service-content">
@@ -397,37 +498,57 @@
             <div class="text-center reveal" style="margin-bottom:4rem;">
                 <span class="subtitle">Precios Transparentes</span>
                 <h2>Paquete Todo Incluido</h2>
-                <p>Sin letras chiquitas. Calidad premium a precio de emprendedor.</p>
+                <p style="color:var(--text-light);">Sin letras chiquitas. Calidad premium a precio de emprendedor.</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card premium reveal">
                     <div class="pricing-header">
-                        <div style="background:var(--color-primary); color:white; padding:4px 12px; border-radius:4px; font-size:0.75rem; display:inline-block; margin-bottom:10px; font-weight:bold;">Paquete</div>
+                        <div class="badge">Paquete</div>
                         <h3>Personalizado</h3>
-                        <div style="margin:1.5rem 0;">
-                            <span style="font-size:1.5rem; vertical-align:top;">$</span>
+                        <div style="margin: 0.5rem 0;">
+                            <span style="font-size:1.4rem; vertical-align:top; font-family:var(--font-heading); color:var(--color-primary-dark); line-height:3.5rem;">$</span>
                             <span class="amount">3,500</span>
-                            <span style="color:var(--text-light); font-weight:600;">MXN</span>
-                            <span style="display:block; font-size:0.9rem; color:var(--text-light); margin-top:5px;">Pago Único Inicial</span>
+                            <span style="color:var(--text-light); font-weight:600; margin-left:4px;">MXN</span>
                         </div>
-                        <span style="background:var(--text-main); color:white; padding:5px 15px; border-radius:20px; font-size:0.8rem;">Sesion de Soporte desde $100 MXN</span>
+                        <p class="price-note">Pago Único Inicial</p>
+                        <span class="soporte-badge">Soporte desde $100 MXN/sesión</span>
                     </div>
                     <div class="pricing-features">
                         <ul>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Dominio .com (TuNombre.com)</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Hosting Rápido y Seguro</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Optimizacion de SEO</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Certificado SSL</li>
-                            <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Botones de WhatsApp</li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Dominio .com (TuNombre.com)
+                            </li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Hosting Rápido y Seguro
+                            </li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Optimización de SEO
+                            </li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Certificado SSL (https)
+                            </li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Botones de WhatsApp y Llamada
+                            </li>
+                            <li>
+                                <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                Diseño 100% Responsivo
+                            </li>
                         </ul>
+                        <a href="#contacto" class="btn btn-primary" style="width:100%; margin-top:1.5rem;">Quiero mi sitio</a>
                     </div>
                 </div>
             </div>
 
-            <div class="reveal" style="margin-top:3rem; text-align:center; padding:2rem; background:var(--bg-body); border-radius:var(--radius-md);">
-                <h4>📌 Sin plazos forzosos</h4>
-                <p style="font-size:0.9rem; margin-top:1rem;">Sin contratos de permanencia ni plazos forzosos. El sitio te pertenece al 100% desde el primer día.</p>
+            <div class="reveal" style="margin-top:3rem; text-align:center; padding:2rem 2.5rem; background:var(--bg-body); border-radius:var(--radius-md); max-width:480px; margin-left:auto; margin-right:auto;">
+                <h4 style="font-size:1.1rem;">📌 Sin plazos forzosos</h4>
+                <p style="font-size:0.9rem; margin-top:0.8rem; color:var(--text-light);">Sin contratos de permanencia. El sitio te pertenece al 100% desde el primer día.</p>
             </div>
         </div>
     </section>
@@ -435,9 +556,10 @@
     <section id="faq" class="section-padding">
         <div class="container" style="max-width:800px;">
             <div class="text-center reveal" style="margin-bottom:3rem;">
-                <h2>Preguntas Frecuentes</h2>
+                <span class="subtitle">Preguntas Frecuentes</span>
+                <h2>¿Tienes dudas?</h2>
             </div>
-            
+
             <div class="reveal">
                 <div class="faq-item">
                     <div class="faq-trigger" onclick="toggleFAQ(this)">
@@ -451,35 +573,46 @@
                         ¿Cómo funciona lo del dominio?
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </div>
-                    <div class="faq-content"><p>El registro (.com) se realiza con tus datos personales para garantizar que tú eres el propietario legal. Solo cubres una renovación anual mínima (aprox. $200 MXN) y nosotros nos encargamos de la configuración técnica inicial sin costo extra..</p></div>
+                    <div class="faq-content"><p>El registro (.com) se realiza con tus datos personales para garantizar que tú eres el propietario legal. Solo cubres una renovación anual mínima (aprox. $200 MXN) y nosotros nos encargamos de la configuración técnica inicial sin costo extra.</p></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-trigger" onclick="toggleFAQ(this)">
                         ¿Tengo que pagar algo después del diseño?
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </div>
-                    <div class="faq-content"><p>No. No hay rentas mensuales por el sitio. Una vez entregado, es de tu propiedad. Si en el futuro necesitas cambios de información o soporte técnico, puedes solicitarlo por un costo mínimo por evento, sin contratos forzosos.</p></div>
+                    <div class="faq-content"><p>No hay rentas mensuales por el sitio. Una vez entregado, es de tu propiedad. Si en el futuro necesitas cambios o soporte técnico, puedes solicitarlo por un costo mínimo por sesión, sin contratos forzosos.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-trigger" onclick="toggleFAQ(this)">
+                        ¿En cuánto tiempo queda lista mi página?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    </div>
+                    <div class="faq-content"><p>Normalmente entre 5 y 7 días hábiles desde que recibes confirmación de pago y nos proporcionas tu información. Proyectos más complejos pueden tomar un poco más, pero siempre te avisamos.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ✅ FIX: Sección CTA con botones corregidos -->
     <section id="contacto" class="cta-section reveal">
         <div class="container">
             <h2>Dale formalidad a tu negocio hoy mismo</h2>
             <p>Empieza con una inversión inteligente. Calidad profesional a tu alcance.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-                
-                <a href="mailto:UVPrisma@gmail.com?subject=🔥%20PROYECTO:%20Quiero%20mi%20web%20profesional%20y%20accesible&body=Hola%20equipo%20UVPrisma,%0A%0AMe%20interesa%20digitalizar%20mi%20negocio%20con%20una%20inversión%20inteligente.%20Busco%20calidad%20y%20buen%20precio.%0A%0AMi%20negocio%20es:%20____________________%0A%0AQuedo%20pendiente%20de%20la%20info.%20¡Saludos!" 
+            <div class="cta-buttons">
+
+                <!-- ✅ Botón Correo -->
+                <a href="mailto:UVPrisma@gmail.com?subject=🔥%20PROYECTO:%20Quiero%20mi%20web%20profesional%20y%20accesible&body=Hola%20equipo%20UVPrisma,%0A%0AMe%20interesa%20digitalizar%20mi%20negocio%20con%20una%20inversión%20inteligente.%20Busco%20calidad%20y%20buen%20precio.%0A%0AMi%20negocio%20es:%20____________________%0A%0AQuedo%20pendiente%20de%20la%20info.%20¡Saludos!"
                    class="btn btn-email">
-                   ✉️ Enviar Correo
+                    ✉️ Enviar Correo
                 </a>
 
-               <a href="https://wa.me/15209887581?text=Hola%20UVPrisma!%20👋%20Vi%20tu%20propuesta%20de%20landing%20page%20profesional.%20Me%20interesa%20tener%20mi%20sitio%20web%20con%20dominio%20propio.%20¿Me%20podrías%20dar%20más%20información?%20🚀" 
-   target="_blank"> 
+                <!-- ✅ FIX: Botón WhatsApp — etiqueta <a> correcta con href y class en el mismo elemento -->
+                <a href="https://wa.me/15209887581?text=Hola%20UVPrisma!%20👋%20Vi%20tu%20propuesta%20de%20landing%20page%20profesional.%20Me%20interesa%20tener%20mi%20sitio%20web%20con%20dominio%20propio.%20¿Me%20podrías%20dar%20más%20información?%20🚀"
+                   target="_blank"
                    class="btn btn-whatsapp">
-                   📱 WhatsApp
+                    📱 WhatsApp
                 </a>
+
             </div>
         </div>
     </section>
@@ -489,13 +622,14 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Agencia UVPrisma</h3>
-                    <p>Hacemos que los negocios locales se vean profesionales en internet con precios justos y tecnología eficiente.</p>
+                    <p>Hacemos que los negocios locales se vean bien en internet con precios justos y tecnología eficiente.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navegación</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#precios">Precios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -509,28 +643,33 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="year">2026</span> Agencia UVPrisma. Todos los derechos reservados.</p>
+                <p>&copy; <span id="year"></span> Agencia UVPrisma. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- ✅ Botón flotante de WhatsApp -->
+    <a href="https://wa.me/15209887581?text=Hola%20UVPrisma!%20👋%20Vi%20tu%20propuesta%20y%20me%20interesa%20tener%20mi%20sitio%20web.%20¿Me%20podrías%20dar%20más%20información?%20🚀"
+       target="_blank"
+       class="whatsapp-float"
+       title="Escríbenos por WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Año actual
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Animaciones de Scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            // Navbar Scroll
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('navbar');
                 window.scrollY > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
@@ -543,21 +682,28 @@
         }
 
         function toggleFAQ(el) {
-            el.parentElement.classList.toggle('active');
+            const item = el.parentElement;
+            // Cierra los otros
+            document.querySelectorAll('.faq-item').forEach(i => i !== item && i.classList.remove('active'));
+            item.classList.toggle('active');
         }
 
         function toggleMobileMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-            if(nav.style.display === 'flex') {
-                nav.style.flexDirection = 'column';
-                nav.style.position = 'absolute';
-                nav.style.top = '100%';
-                nav.style.left = 0;
-                nav.style.background = 'white';
-                nav.style.width = '100%';
-                nav.style.padding = '2rem';
-                nav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            const nav = document.getElementById('navLinks');
+            const isOpen = nav.style.display === 'flex';
+            nav.style.display = isOpen ? 'none' : 'flex';
+            if (!isOpen) {
+                Object.assign(nav.style, {
+                    flexDirection: 'column',
+                    position: 'absolute',
+                    top: '100%',
+                    left: '0',
+                    background: 'white',
+                    width: '100%',
+                    padding: '1.5rem 2rem',
+                    boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                    zIndex: '999'
+                });
             }
         }
     </script>
